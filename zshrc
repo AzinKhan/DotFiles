@@ -84,9 +84,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-
-alias screenshare="x11vnc -xkb -noxrecord -noxfixes -noxdamage -forever -display :0 -auth /var/run/lightdm/root/:0 -usepw -repeat -rfbport 5999"
-alias OllyDash="/home/azin/arnold-docker/run-arnold-local-container.sh"
 export GOPATH=/home/azin/
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin

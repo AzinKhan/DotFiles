@@ -10,6 +10,7 @@ highlight DiffChange ctermfg=None ctermbg=35
 highlight DiffAdd ctermfg=None ctermbg=30
 highlight DiffDelete ctermfg=None ctermbg=160
 nmap ,f :set foldmethod=syntax<CR>
+map <C-n> :NERDTreeToggle<CR>
 highlight Folded ctermbg=0
 highlight Folded ctermfg=29
 syntax on

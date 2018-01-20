@@ -1,11 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/azin/Olly/src/qa-frameworks/golang'
-let g:netrw_dirhist_2='/home/azin/Olly/src/qa-frameworks/golang/log_listener'
-let g:netrw_dirhist_3='/home/azin/Olly/tests/Converted'
-let g:netrw_dirhist_4='/home/azin/Olly/src/qa-frameworks/golang/log_listener'
-let g:netrw_dirhist_5='/home/azin/Olly/src/qa-frameworks/.git'
-let g:netrw_dirhist_6='/home/azin/Olly/src/spidey/src/spidey_protos'
-let g:netrw_dirhist_7='/home/azin/Olly/olly_startup'
-let g:netrw_dirhist_8='/home/azin/Olly/src/qa-frameworks/integration/log_listener'
-let g:netrw_dirhist_9='/home/azin/src/github.com/dhowden/tag/tag'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/azin/Olly/src/bitbucket.org/emotech/common/golang/logs'
+let g:netrw_dirhist_2='/home/azin/Olly/src/bitbucket.org/emotech/common/golang'
+let g:netrw_dirhist_3='/home/azin/Olly/src/bitbucket.org/emotech/common/golang/grpc'
+let g:netrw_dirhist_4='/home/azin/Olly/src/qa-frameworks/integration/log_listener/src'
+let g:netrw_dirhist_5='/home/azin/Olly/src/bitbucket.org/emotech/casablanca/statemachine'
