@@ -1,5 +1,7 @@
 set relativenumber
+set cursorline
 highlight CursorLineNR ctermfg=yellow
+highlight CursorLine ctermbg=black cterm=NONE
 highlight LineNr ctermfg=grey
 highlight Pmenu ctermfg=30 ctermbg=16
 highlight PmenuSel ctermfg=19 ctermbg=231
@@ -24,6 +26,13 @@ endif
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+ino " ""<left>
+ino ' ''<left>
+ino ( ()<left>
+ino [ []<left>
+ino { {}<left>
+ino {<CR> {<CR>}<ESC>O
+ino {;<CR> {<CR>};<ESC>O
 
 augroup myvimrc
     au!
