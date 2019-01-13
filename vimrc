@@ -9,6 +9,7 @@ highlight DiffText ctermfg=None ctermbg=25
 highlight DiffChange ctermfg=None ctermbg=35
 highlight DiffAdd ctermfg=None ctermbg=30
 highlight DiffDelete ctermfg=None ctermbg=160
+highlight Search ctermfg=None ctermbg=8
 nmap ,f :set foldmethod=syntax<CR>
 map <C-n> :NERDTreeToggle<CR>
 highlight Folded ctermbg=0
@@ -44,5 +45,19 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "passive_filetypes": ["tex"],
+    \}
+"let g:syntastic_python_checkers = ['flake8']
+"let g:go_highlight_fields = 1
+"let g:go_highlight_types = 1
+let g:go_highlight_functions = 1 
+"let g:go_highlight_methods = 1
+"let g:go_highlight_operators = 1
+"let g:go_highlight_extra_types = 1
+let g:go_fmt_command = "goimports"
+let g:go_auto_type_info = 1
+let g:go_auto_sameids = 1
+set updatetime=500
 execute pathogen#infect()
