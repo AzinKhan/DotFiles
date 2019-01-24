@@ -2,6 +2,7 @@ set relativenumber
 set cursorline
 highlight CursorLineNR ctermfg=yellow
 highlight CursorLine ctermbg=black cterm=NONE
+highlight ErrorMsg ctermfg=white ctermbg=black guifg=White guibg=Black
 highlight LineNr ctermfg=grey
 highlight Pmenu ctermfg=30 ctermbg=16
 highlight PmenuSel ctermfg=19 ctermbg=231
