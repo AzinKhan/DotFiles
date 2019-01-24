@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/azin/Olly/src/bitbucket.org/emotech/common/golang/logs'
 let g:netrw_dirhist_2='/home/azin/Olly/src/bitbucket.org/emotech/common/golang'
 let g:netrw_dirhist_3='/home/azin/Olly/src/bitbucket.org/emotech/common/golang/grpc'
 let g:netrw_dirhist_4='/home/azin/Olly/src/qa-frameworks/integration/log_listener/src'
 let g:netrw_dirhist_5='/home/azin/Olly/src/bitbucket.org/emotech/casablanca/statemachine'
+let g:netrw_dirhist_6='/home/azin/DotFiles/.git'
