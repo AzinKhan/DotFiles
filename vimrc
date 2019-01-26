@@ -15,7 +15,7 @@ highlight Search ctermfg=None ctermbg=8
 nmap ,f :set foldmethod=syntax<CR>
 map <C-n> :NERDTreeToggle<CR>
 highlight Folded ctermbg=0
-highlight Folded ctermfg=29
+highlight Folded ctermfg=14
 syntax on
 set t_Co:256
 filetype plugin indent on

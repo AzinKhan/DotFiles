@@ -1,0 +1,33 @@
+[global_config]
+  inactive_color_offset = 1.0
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_image = None
+    font = Droid Sans Mono for Powerline 10
+    foreground_color = "#ffffff"
+    icon_bell = False
+    palette = "#4d4d4d:#08fbcf:#d90086:#f90057:#007be3:#aa00aa:#51c6ef:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
+    scroll_on_output = False
+    scrollback_infinite = True
+    use_system_font = False
+  [[Blue]]
+    background_color = "#002b36"
+    background_image = None
+    font = Noto Mono for Powerline 10
+    foreground_color = "#ffffff"
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    use_system_font = False
+  [[White]]
+    background_color = "#ffffff"
+    background_image = None
+    foreground_color = "#000000"
