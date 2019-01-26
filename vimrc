@@ -1,6 +1,6 @@
 set relativenumber
 set cursorline
-highlight Keyword ctermfg=162
+syntax on
 highlight CursorLineNR ctermfg=yellow
 highlight CursorLine ctermbg=black cterm=NONE
 highlight ErrorMsg ctermfg=white ctermbg=black guifg=White guibg=Black
@@ -16,7 +16,6 @@ nmap ,f :set foldmethod=syntax<CR>
 map <C-n> :NERDTreeToggle<CR>
 highlight Folded ctermbg=0
 highlight Folded ctermfg=14
-syntax on
 set t_Co:256
 filetype plugin indent on
 set tabstop=4
@@ -63,3 +62,5 @@ let g:go_auto_type_info = 1
 "let g:go_auto_sameids = 1
 set updatetime=50
 execute pathogen#infect()
+highlight Statement ctermfg=162
+highlight Keyword ctermfg=162
