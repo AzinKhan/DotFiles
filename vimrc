@@ -1,5 +1,6 @@
 set relativenumber
 set cursorline
+highlight Keyword ctermfg=162
 highlight CursorLineNR ctermfg=yellow
 highlight CursorLine ctermbg=black cterm=NONE
 highlight ErrorMsg ctermfg=white ctermbg=black guifg=White guibg=Black
@@ -52,13 +53,13 @@ let g:syntastic_mode_map = {
     \}
 "let g:syntastic_python_checkers = ['flake8']
 "let g:go_highlight_fields = 1
-"let g:go_highlight_types = 1
+""let g:go_highlight_types = 1
 let g:go_highlight_functions = 1 
 "let g:go_highlight_methods = 1
 "let g:go_highlight_operators = 1
 "let g:go_highlight_extra_types = 1
 let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
-let g:go_auto_sameids = 1
-set updatetime=500
+"let g:go_auto_sameids = 1
+set updatetime=50
 execute pathogen#infect()
