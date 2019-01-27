@@ -2,7 +2,7 @@ set relativenumber
 set cursorline
 syntax on
 highlight CursorLineNR ctermfg=yellow
-highlight CursorLine ctermbg=black cterm=NONE
+highlight CursorLine ctermbg=235 cterm=NONE
 highlight ErrorMsg ctermfg=white ctermbg=black guifg=White guibg=Black
 highlight LineNr ctermfg=grey
 highlight Pmenu ctermfg=30 ctermbg=16
@@ -52,9 +52,9 @@ let g:syntastic_mode_map = {
     \}
 "let g:syntastic_python_checkers = ['flake8']
 "let g:go_highlight_fields = 1
-""let g:go_highlight_types = 1
+"let g:go_highlight_types = 1
 let g:go_highlight_functions = 1 
-"let g:go_highlight_methods = 1
+let g:go_highlight_methods = 0
 "let g:go_highlight_operators = 1
 "let g:go_highlight_extra_types = 1
 let g:go_fmt_command = "goimports"
