@@ -1,6 +1,10 @@
-set relativenumber
-set number
+"set relativenumber
+"set number
+set backspace=indent,eol,start
 set cursorline
+" Set scrolloff so cursor isn't at bottom/top of page
+set scrolloff=10
+set hlsearch
 syntax on
 highlight CursorLineNR ctermfg=yellow
 highlight CursorLine ctermbg=235 cterm=NONE
@@ -13,6 +17,8 @@ highlight DiffChange ctermfg=None ctermbg=35
 highlight DiffAdd ctermfg=None ctermbg=30
 highlight DiffDelete ctermfg=None ctermbg=160
 highlight Search ctermfg=None ctermbg=8
+highlight Statement ctermfg=162
+highlight Keyword ctermfg=162
 nmap ,f :set foldmethod=syntax<CR>
 map <C-n> :NERDTreeToggle<CR>
 highlight Folded ctermbg=0
@@ -27,9 +33,20 @@ let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
+
+" Jump to last cursor position unless it's invalid or in an event handler
+autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+""""""""""""""""""""""""""""""""""""""""""""
+" Auto-complete brackets, quotations etc
+""""""""""""""""""""""""""""""""""""""""""""
 ino " ""<left>
 ino ' ''<left>
 ino ( ()<left>
@@ -59,17 +76,46 @@ let g:go_auto_type_info = 1
 
 let g:jedi#goto_command = "gd"
 let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_definitions_command = ""
+let g:jedi#goto_definitions_command = "<leader>d"
 let g:jedi#documentation_command = "K"
 let g:jedi#usages_command = "<leader>n"
-let g:jedi#completions_command = "<Tab>"
+let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = "<leader>r"
 
-"let g:go_auto_sameids = 1
-let g:syntastic_go_checkers = ['go', 'govet', 'errcheck']
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MULTIPURPOSE TAB KEY
+" Indent if we're at the beginning of a line. Else, do completion.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col
+        return "\<tab>"
+    endif
+
+    let char = getline('.')[col - 1]
+    if char =~ '\k'
+        " There's an identifier before the cursor, so complete the identifier.
+        return "\<c-space>"
+    else
+        return "\<tab>"
+    endif
+endfunction
+inoremap <expr> <tab> InsertTabWrapper()
+inoremap <s-tab> <c-n>
+
+au BufWrite *.py :Autoformat
+let g:formatterpath = ['/Users/azinkhan/.virtualenvs/kraken-core/bin/black', '/Users/azinkhan/.virtualenvs/kraken-core/bin/isort']
+let g:formatters_python = ['black', 'isort']
+
 "set updatetime=100
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_max_files=0
+"Don't index the git files
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+"set previewheight=40
+set shell=/bin/zsh
+let Tlist_WinWidth = 30
+"let Tlist_Auto_Open = 1
 execute pathogen#infect()
-highlight Statement ctermfg=162
-highlight Keyword ctermfg=162
-set previewheight=40
-set shell=/usr/bin/zsh
+vnoremap <silent> # :s/^/#/<cr>:noh<cr>
+vnoremap <silent> -# :s/^#//<cr>:noh<cr>
