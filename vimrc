@@ -1,17 +1,20 @@
 "set relativenumber
-"set number
 set backspace=indent,eol,start
+"set number
 set cursorline
 " Set scrolloff so cursor isn't at bottom/top of page
 set scrolloff=10
 set hlsearch
+" Set leader key to comma since the position of commas
+" doesn't change as much as \ on different keyboards
+let mapleader = ","
 syntax on
 highlight CursorLineNR ctermfg=yellow
 highlight CursorLine ctermbg=235 cterm=NONE
 highlight ErrorMsg ctermfg=white ctermbg=black guifg=White guibg=Black
 highlight LineNr ctermfg=grey
-highlight Pmenu ctermfg=30 ctermbg=16
-highlight PmenuSel ctermfg=19 ctermbg=231
+highlight Pmenu ctermfg=15 ctermbg=239
+highlight PmenuSel ctermfg=15 ctermbg=34
 highlight DiffText ctermfg=None ctermbg=25
 highlight DiffChange ctermfg=None ctermbg=35
 highlight DiffAdd ctermfg=None ctermbg=30
@@ -19,10 +22,18 @@ highlight DiffDelete ctermfg=None ctermbg=160
 highlight Search ctermfg=None ctermbg=8
 highlight Statement ctermfg=162
 highlight Keyword ctermfg=162
-nmap ,f :set foldmethod=syntax<CR>
-map <C-n> :NERDTreeToggle<CR>
 highlight Folded ctermbg=0
 highlight Folded ctermfg=14
+""highlight pythonString ctermfg=40
+""highlight pythonQuotes ctermfg=40
+""highlight pythonTripleQuotes ctermfg=40
+highlight pythonComment ctermfg=248
+""highlight pythonFunction ctermfg=87
+highlight pythonBuiltin ctermfg=162
+highlight pythonExceptions ctermfg=150
+highlight pythonInclude ctermfg=162
+nmap ,f :set foldmethod=syntax<CR>
+map <C-n> :NERDTreeToggle<CR>
 set t_Co:256
 filetype plugin indent on
 set tabstop=4
